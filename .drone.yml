@@ -1,7 +1,12 @@
-pipeline:
-  build:
-    image: node:latest
-    commands: npm install
-  test:
-    image: node:latest
-    commands: npm run test
+kind: pileline
+name: default
+
+clone:
+  disable: true
+
+steps:
+- name: test_drone
+  image: alpine:3.9
+  commands:
+  - echo "show hello world by drone"
+  - echo $(pwd)
